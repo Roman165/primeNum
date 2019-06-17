@@ -1,25 +1,27 @@
 (function () {
 	'use strict';
-	var number1, number2
-		do {
-		number1 = +prompt('Введите первое число больше \'1\'', '20')
-		number2 = +prompt('Введите второе число больше \'2\'', '40')
-		}
-	while (number1 < 2 || number2 < 3) 
+	
+	var array = [1,2,4,9]
 
-for (var i=number1;  i<=number2; i++) {
+	function map(fn, array){
 
-  var count = 0;
+    var narr = [];
+	for(var i=0; i<array.length; i++){
+		narr.push(square(array[i]))
 
-  for (var j=1; j<=i; j++) {
-    if (i%j) {continue;}
+	}      
+		return narr
+	}
+	// console.log(narr); 
 
-    count += 1;
-  }
-  if (count == 2) document.write(i+', ');
+	function square(x) { 
 
-}
+		return x * x; 
 
+	} 
+
+	console.log(array); 
+	console.log(map(square, array)); 
 
 
 })();
